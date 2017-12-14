@@ -2,6 +2,7 @@
 #define GRAPVIZ_H
 #include<mainwindow.h>
 #include<nodoavion.h>
+#include<maletas.h>
 
 
 class grapviz

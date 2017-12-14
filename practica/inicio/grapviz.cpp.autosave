@@ -8,7 +8,7 @@ void graficar(lista*listadoble)
     FILE *dot;
        dot = fopen("dot.dot", "w+");
        fprintf(dot, "digraph{\n");
-       fprintf(dot,"rankdir = LR; \n ");
+       fprintf(dot,"rankdir = LR; \n");
        fprintf(dot,"node[shape = record];\n");
        fprintf(dot, "subgraph clusterPRACTICA{\n");
        fprintf(dot, "label = \"PRACTICA\";\n");

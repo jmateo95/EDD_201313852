@@ -1,5 +1,7 @@
 #include "nodoavion.h"
 #include "nodopasajero.h"
+#include "maletas.h"
+
 int t;
 int num;
 listaper *listapersona;
@@ -99,11 +101,15 @@ void restar(lista*listadoble){
     nodo*aux=listadoble->primero;
     int turnos=aux->turnos;
     if(turnos==1){
+        srand(time(NULL));
         for(int i=0; i<aux->pasajeros;i++)
         {
-         insertarper(listapersona, (*n));
+            int maletas1=1+rand()%4;
+            int turnos1=1+rand()%3;
+            int documentos1=1+rand()%10;
+         insertarper(listapersona, (*n),maletas1, turnos1, documentos1);
          (*n)++;
-        }
+      }
         eliminar(listadoble);
     }else{
         aux->turnos=turnos-1;

@@ -1,10 +1,15 @@
 #include "nodopasajero.h"
-void insertarper(listaper* listapersona, int n)
+#include "maletas.h"
+listama *listamaletas;
+
+void crearlistamaletas(){
+    listamaletas= (listama*)malloc(sizeof(listama));
+    listamaletas->primero=NULL;
+    listamaletas->ultimo=NULL;
+}
+void insertarper(listaper* listapersona, int n, int maletas, int turnos, int documentos)
 {
-    srand (time(NULL));
-    int maletas=1+rand()%4;
-    int turnos=1+rand()%3;
-    int documentos=1+rand()%10;
+
     nodoper *nuevoper=(nodoper*)malloc(sizeof(nodoper));
     if(listapersona->primero==NULL)
     {
@@ -25,7 +30,11 @@ void insertarper(listaper* listapersona, int n)
         nuevoper->turnos=turnos;
         nuevoper->documentos=documentos;
         nuevoper->proximo=NULL;
+    }    
+    for(int i=0; i<maletas;i++){
+    insertarmaletas(listamaletas);
     }
+
 }
 
 QString mostrarper(listaper*listadoble){

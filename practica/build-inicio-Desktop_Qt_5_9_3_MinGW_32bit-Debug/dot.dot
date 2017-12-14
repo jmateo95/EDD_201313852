@@ -1,33 +1,26 @@
-digraph{ 
- rankdir = LR; 
- node[shape = record];subgraph clusterPRACTICA{
+digraph{
+rankdir = LR; 
+ node[shape = record];
+subgraph clusterPRACTICA{
 label = "PRACTICA";
 subgraph clusterAVIONES{
-label = " AVIONES "nca0[label = "AVION 4\n TAMAÑO GRANDE\n TURNOSR 2\n PASAJEROS 34"];
-nca1[label = "AVION 5\n TAMAÑO PEQUEÑO\n TURNOSR 1\n PASAJEROS 5"];
-nca2[label = "AVION 6\n TAMAÑO PEQUEÑO\n TURNOSR 1\n PASAJEROS 8"];
-nca3[label = "AVION 7\n TAMAÑO PEQUEÑO\n TURNOSR 1\n PASAJEROS 8"];
-nca4[label = "AVION 8\n TAMAÑO PEQUEÑO\n TURNOSR 1\n PASAJEROS 8"];
-nca5[label = "AVION 9\n TAMAÑO PEQUEÑO\n TURNOSR 1\n PASAJEROS 5"];
-nca6[label = "AVION 10\n TAMAÑO PEQUEÑO\n TURNOSR 1\n PASAJEROS 5"];
-nca7[label = "AVION 11\n TAMAÑO MEDIANO\n TURNOSR 2\n PASAJEROS 16"];
-nca8[label = "AVION 12\n TAMAÑO MEDIANO\n TURNOSR 2\n PASAJEROS 18"];
-nca0->nca1
-nca1->nca2
-nca1->nca0
-nca2->nca3
-nca2->nca1
-nca3->nca4
-nca3->nca2
-nca4->nca5
-nca4->nca3
-nca5->nca6
-nca5->nca4
-nca6->nca7
-nca6->nca5
-nca7->nca8
-nca7->nca6
-nca8->nca7
+label = " AVIONES "
+avion0[label = "AVION 3\n TAMAÑO GRANDE\n TURNOSR 1\n PASAJEROS 36"];
+avion1[label = "AVION 4\n TAMAÑO GRANDE\n TURNOSR 3\n PASAJEROS 38"];
+avion2[label = "AVION 5\n TAMAÑO GRANDE\n TURNOSR 3\n PASAJEROS 39"];
+avion3[label = "AVION 6\n TAMAÑO MEDIANO\n TURNOSR 2\n PASAJEROS 22"];
+avion4[label = "AVION 7\n TAMAÑO MEDIANO\n TURNOSR 2\n PASAJEROS 23"];
+avion5[label = "AVION 8\n TAMAÑO MEDIANO\n TURNOSR 2\n PASAJEROS 16"];
+avion0->avion1
+avion1->avion2
+avion1->avion0
+avion2->avion3
+avion2->avion1
+avion3->avion4
+avion3->avion2
+avion4->avion5
+avion4->avion3
+avion5->avion4
 }
 }
 }

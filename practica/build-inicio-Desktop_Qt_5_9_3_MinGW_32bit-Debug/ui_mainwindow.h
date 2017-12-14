@@ -42,6 +42,7 @@ public:
     QTextEdit *textEdit;
     QLabel *label_4;
     QLabel *label_5;
+    QLabel *label_6;
     QMenuBar *menuBar;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
@@ -90,6 +91,9 @@ public:
         label_5 = new QLabel(centralWidget);
         label_5->setObjectName(QStringLiteral("label_5"));
         label_5->setGeometry(QRect(310, 60, 47, 13));
+        label_6 = new QLabel(centralWidget);
+        label_6->setObjectName(QStringLiteral("label_6"));
+        label_6->setGeometry(QRect(40, 330, 47, 13));
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
@@ -117,6 +121,7 @@ public:
         label_3->setText(QApplication::translate("MainWindow", "TextLabel", Q_NULLPTR));
         label_4->setText(QApplication::translate("MainWindow", "CONSOLA", Q_NULLPTR));
         label_5->setText(QApplication::translate("MainWindow", "VISOR", Q_NULLPTR));
+        label_6->setText(QApplication::translate("MainWindow", "TextLabel", Q_NULLPTR));
     } // retranslateUi
 
 };

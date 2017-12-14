@@ -3,6 +3,7 @@
 #include "ui_mainwindow.h"
 #include "grapviz.h"
 #include "nodopasajero.h"
+#include "maletas.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -28,6 +29,7 @@ void MainWindow::on_pushButton_clicked()
     tu=ui->lineEdit->text().toInt();
     av=ui->lineEdit->text().toInt();
     crearlista();
+    crearlistamaletas();
 
 }
 
@@ -47,6 +49,7 @@ void MainWindow::on_pushButton_2_clicked()
     QImage QImagen;
     QImagen.load ( imagefilename);
     ui->label_3->setPixmap(QPixmap::fromImage(QImagen));
+    ui->label_6->setText(mostrarmaletas());
 
 }
 /*ui->label_3->setText(QString::number(tipo2));*/

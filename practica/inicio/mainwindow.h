@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include<nodoavion.h>
 #include<nodopasajero.h>
+#include<maletas.h>
 #include <iostream>
 #include <string>
 namespace Ui {

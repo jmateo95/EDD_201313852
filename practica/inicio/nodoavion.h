@@ -4,6 +4,8 @@
 #include <iostream>
 #include <string>
 #include <nodopasajero.h>
+#include <maletas.h>
+#include <windows.h>
 typedef struct nodo
 {
     int numero;
