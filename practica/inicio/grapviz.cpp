@@ -5,7 +5,7 @@
 #include "nodopasajero.h"
 #include "escritorios.h"
 
-void graficar(lista*listadoble)
+void graficar(lista*listadoble, estacionlista*listaestacion, estacioncola *colaestacion)
 {
 
        FILE *dot;
@@ -52,7 +52,7 @@ void graficar(lista*listadoble)
        }
 
        fprintf(dot, "}\n");
-       QString escribir= graficarmaletas1()+graficarescritorios()+graficarpasjeros();
+       QString escribir= graficarmaletas1()+graficarescritorios()+graficarpasjeros()+graficarestaciones(listaestacion)+graficarcolaestaciones(colaestacion);
        QByteArray ba = escribir.toLatin1();
         const char *c_str2 = ba.data();
        fprintf(dot, c_str2);

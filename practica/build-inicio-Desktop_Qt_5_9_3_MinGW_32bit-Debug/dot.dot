@@ -6,397 +6,55 @@ node[shape = record];
 label = "PRACTICA";
 subgraph clusterAVIONES{
 label = " AVIONES "
-avion0[label = "AVION 1\n TAMAÑO MEDIANO\n TURNOSR 2\n PASAJEROS 20"];
-avion1[label = "AVION 2\n TAMAÑO MEDIANO\n TURNOSR 2\n PASAJEROS 19"];
-avion2[label = "AVION 3\n TAMAÑO GRANDE\n TURNOSR 3\n PASAJEROS 38"];
+avion0[label = "AVION 11\n TAMAÑO GRANDE\n TURNOSR 3\n PASAJEROS 32"];
+avion1[label = "AVION 12\n TAMAÑO GRANDE\n TURNOSR 3\n PASAJEROS 30"];
+avion2[label = "AVION 13\n TAMAÑO PEQUEÑO\n TURNOSR 1\n PASAJEROS 5"];
+avion3[label = "AVION 14\n TAMAÑO MEDIANO\n TURNOSR 2\n PASAJEROS 15"];
+avion4[label = "AVION 15\n TAMAÑO GRANDE\n TURNOSR 3\n PASAJEROS 39"];
+avion5[label = "AVION 16\n TAMAÑO PEQUEÑO\n TURNOSR 1\n PASAJEROS 7"];
+avion6[label = "AVION 17\n TAMAÑO MEDIANO\n TURNOSR 2\n PASAJEROS 19"];
+avion7[label = "AVION 18\n TAMAÑO GRANDE\n TURNOSR 3\n PASAJEROS 31"];
+avion8[label = "AVION 19\n TAMAÑO GRANDE\n TURNOSR 3\n PASAJEROS 34"];
 avion0->avion1
 avion1->avion2
 avion1->avion0
+avion2->avion3
 avion2->avion1
+avion3->avion4
+avion3->avion2
+avion4->avion5
+avion4->avion3
+avion5->avion6
+avion5->avion4
+avion6->avion7
+avion6->avion5
+avion7->avion8
+avion7->avion6
+avion8->avion7
 }
-subgraph clusterMALETAS{
-rankdir = LR; 
-node[shape = record];
-label = " MALETAS "
-maleta0[label = " MALETA 0"];
-maleta1[label = " MALETA 1"];
-maleta2[label = " MALETA 2"];
-maleta3[label = " MALETA 3"];
-maleta4[label = " MALETA 4"];
-maleta5[label = " MALETA 5"];
-maleta6[label = " MALETA 6"];
-maleta7[label = " MALETA 7"];
-maleta8[label = " MALETA 8"];
-maleta9[label = " MALETA 9"];
-maleta10[label = " MALETA 10"];
-maleta11[label = " MALETA 11"];
-maleta12[label = " MALETA 12"];
-maleta13[label = " MALETA 13"];
-maleta14[label = " MALETA 14"];
-maleta15[label = " MALETA 15"];
-maleta16[label = " MALETA 16"];
-maleta17[label = " MALETA 17"];
-maleta18[label = " MALETA 18"];
-maleta19[label = " MALETA 19"];
-maleta20[label = " MALETA 20"];
-maleta21[label = " MALETA 21"];
-maleta22[label = " MALETA 22"];
-maleta23[label = " MALETA 23"];
-maleta24[label = " MALETA 24"];
-maleta25[label = " MALETA 25"];
-maleta26[label = " MALETA 26"];
-maleta27[label = " MALETA 27"];
-maleta28[label = " MALETA 28"];
-maleta29[label = " MALETA 29"];
-maleta30[label = " MALETA 30"];
-maleta31[label = " MALETA 31"];
-maleta32[label = " MALETA 32"];
-maleta33[label = " MALETA 33"];
-maleta34[label = " MALETA 34"];
-maleta35[label = " MALETA 35"];
-maleta36[label = " MALETA 36"];
-maleta37[label = " MALETA 37"];
-maleta38[label = " MALETA 38"];
-maleta39[label = " MALETA 39"];
-maleta40[label = " MALETA 40"];
-maleta41[label = " MALETA 41"];
-maleta42[label = " MALETA 42"];
-maleta43[label = " MALETA 43"];
-maleta44[label = " MALETA 44"];
-maleta45[label = " MALETA 45"];
-maleta46[label = " MALETA 46"];
-maleta47[label = " MALETA 47"];
-maleta48[label = " MALETA 48"];
-maleta49[label = " MALETA 49"];
-maleta50[label = " MALETA 50"];
-maleta51[label = " MALETA 51"];
-maleta52[label = " MALETA 52"];
-maleta53[label = " MALETA 53"];
-maleta54[label = " MALETA 54"];
-maleta55[label = " MALETA 55"];
-maleta56[label = " MALETA 56"];
-maleta57[label = " MALETA 57"];
-maleta58[label = " MALETA 58"];
-maleta59[label = " MALETA 59"];
-maleta60[label = " MALETA 60"];
-maleta61[label = " MALETA 61"];
-maleta62[label = " MALETA 62"];
-maleta63[label = " MALETA 63"];
-maleta64[label = " MALETA 64"];
-maleta65[label = " MALETA 65"];
-maleta66[label = " MALETA 66"];
-maleta67[label = " MALETA 67"];
-maleta68[label = " MALETA 68"];
-maleta69[label = " MALETA 69"];
-maleta70[label = " MALETA 70"];
-maleta71[label = " MALETA 71"];
-maleta72[label = " MALETA 72"];
-maleta73[label = " MALETA 73"];
-maleta74[label = " MALETA 74"];
-maleta75[label = " MALETA 75"];
-maleta76[label = " MALETA 76"];
-maleta77[label = " MALETA 77"];
-maleta78[label = " MALETA 78"];
-maleta79[label = " MALETA 79"];
-maleta80[label = " MALETA 80"];
-maleta81[label = " MALETA 81"];
-maleta82[label = " MALETA 82"];
-maleta83[label = " MALETA 83"];
-maleta0->maleta1
-maleta1->maleta0
-maleta1->maleta2
-maleta2->maleta1
-maleta2->maleta3
-maleta3->maleta2
-maleta3->maleta4
-maleta4->maleta3
-maleta4->maleta5
-maleta5->maleta4
-maleta5->maleta6
-maleta6->maleta5
-maleta6->maleta7
-maleta7->maleta6
-maleta7->maleta8
-maleta8->maleta7
-maleta8->maleta9
-maleta9->maleta8
-maleta9->maleta10
-maleta10->maleta9
-maleta10->maleta11
-maleta11->maleta10
-maleta11->maleta12
-maleta12->maleta11
-maleta12->maleta13
-maleta13->maleta12
-maleta13->maleta14
-maleta14->maleta13
-maleta14->maleta15
-maleta15->maleta14
-maleta15->maleta16
-maleta16->maleta15
-maleta16->maleta17
-maleta17->maleta16
-maleta17->maleta18
-maleta18->maleta17
-maleta18->maleta19
-maleta19->maleta18
-maleta19->maleta20
-maleta20->maleta19
-maleta20->maleta21
-maleta21->maleta20
-maleta21->maleta22
-maleta22->maleta21
-maleta22->maleta23
-maleta23->maleta22
-maleta23->maleta24
-maleta24->maleta23
-maleta24->maleta25
-maleta25->maleta24
-maleta25->maleta26
-maleta26->maleta25
-maleta26->maleta27
-maleta27->maleta26
-maleta27->maleta28
-maleta28->maleta27
-maleta28->maleta29
-maleta29->maleta28
-maleta29->maleta30
-maleta30->maleta29
-maleta30->maleta31
-maleta31->maleta30
-maleta31->maleta32
-maleta32->maleta31
-maleta32->maleta33
-maleta33->maleta32
-maleta33->maleta34
-maleta34->maleta33
-maleta34->maleta35
-maleta35->maleta34
-maleta35->maleta36
-maleta36->maleta35
-maleta36->maleta37
-maleta37->maleta36
-maleta37->maleta38
-maleta38->maleta37
-maleta38->maleta39
-maleta39->maleta38
-maleta39->maleta40
-maleta40->maleta39
-maleta40->maleta41
-maleta41->maleta40
-maleta41->maleta42
-maleta42->maleta41
-maleta42->maleta43
-maleta43->maleta42
-maleta43->maleta44
-maleta44->maleta43
-maleta44->maleta45
-maleta45->maleta44
-maleta45->maleta46
-maleta46->maleta45
-maleta46->maleta47
-maleta47->maleta46
-maleta47->maleta48
-maleta48->maleta47
-maleta48->maleta49
-maleta49->maleta48
-maleta49->maleta50
-maleta50->maleta49
-maleta50->maleta51
-maleta51->maleta50
-maleta51->maleta52
-maleta52->maleta51
-maleta52->maleta53
-maleta53->maleta52
-maleta53->maleta54
-maleta54->maleta53
-maleta54->maleta55
-maleta55->maleta54
-maleta55->maleta56
-maleta56->maleta55
-maleta56->maleta57
-maleta57->maleta56
-maleta57->maleta58
-maleta58->maleta57
-maleta58->maleta59
-maleta59->maleta58
-maleta59->maleta60
-maleta60->maleta59
-maleta60->maleta61
-maleta61->maleta60
-maleta61->maleta62
-maleta62->maleta61
-maleta62->maleta63
-maleta63->maleta62
-maleta63->maleta64
-maleta64->maleta63
-maleta64->maleta65
-maleta65->maleta64
-maleta65->maleta66
-maleta66->maleta65
-maleta66->maleta67
-maleta67->maleta66
-maleta67->maleta68
-maleta68->maleta67
-maleta68->maleta69
-maleta69->maleta68
-maleta69->maleta70
-maleta70->maleta69
-maleta70->maleta71
-maleta71->maleta70
-maleta71->maleta72
-maleta72->maleta71
-maleta72->maleta73
-maleta73->maleta72
-maleta73->maleta74
-maleta74->maleta73
-maleta74->maleta75
-maleta75->maleta74
-maleta75->maleta76
-maleta76->maleta75
-maleta76->maleta77
-maleta77->maleta76
-maleta77->maleta78
-maleta78->maleta77
-maleta78->maleta79
-maleta79->maleta78
-maleta79->maleta80
-maleta80->maleta79
-maleta80->maleta81
-maleta81->maleta80
-maleta81->maleta82
-maleta82->maleta81
-maleta82->maleta83
-maleta83->maleta82
-maleta83->maleta84
-maleta84->maleta83
-maleta84->maleta0
-maleta0->maleta84}
 subgraph clusterESCRITORIOS{
 rankdir = LR; 
 node[shape = record];
 label = " ESCRITORIOS "
 escritorio0[label = "ESCRITORIO A\n PASAJERO: 0\n TURNOS: 0\n DOCUMENTOS: 0"];
 escritorio1[label = "ESCRITORIO B\n PASAJERO: 0\n TURNOS: 0\n DOCUMENTOS: 0"];
-escritorio2[label = "ESCRITORIO C\n PASAJERO: 0\n TURNOS: 0\n DOCUMENTOS: 0"];
 escritorio0->escritorio1
 escritorio1->escritorio0
-escritorio1->escritorio2
-escritorio2->escritorio1
 }
-subgraph clusterPASAJEROS{
+subgraph clusterESTACIONES{
 rankdir = LR; 
 node[shape = record];
-label = " PASAJEROS "
-pasajero0[label = "PASAJERO 0\n TURNOS: 3\n DOCUMENTOS 3\n MALETAS: 3"];
-pasajero1[label = "PASAJERO 1\n TURNOS: 3\n DOCUMENTOS 5\n MALETAS: 2"];
-pasajero2[label = "PASAJERO 2\n TURNOS: 3\n DOCUMENTOS 9\n MALETAS: 4"];
-pasajero3[label = "PASAJERO 3\n TURNOS: 3\n DOCUMENTOS 8\n MALETAS: 4"];
-pasajero4[label = "PASAJERO 4\n TURNOS: 1\n DOCUMENTOS 6\n MALETAS: 3"];
-pasajero5[label = "PASAJERO 5\n TURNOS: 1\n DOCUMENTOS 1\n MALETAS: 1"];
-pasajero6[label = "PASAJERO 6\n TURNOS: 2\n DOCUMENTOS 1\n MALETAS: 3"];
-pasajero7[label = "PASAJERO 7\n TURNOS: 1\n DOCUMENTOS 4\n MALETAS: 2"];
-pasajero8[label = "PASAJERO 8\n TURNOS: 2\n DOCUMENTOS 6\n MALETAS: 1"];
-pasajero9[label = "PASAJERO 9\n TURNOS: 3\n DOCUMENTOS 3\n MALETAS: 1"];
-pasajero10[label = "PASAJERO 10\n TURNOS: 2\n DOCUMENTOS 4\n MALETAS: 1"];
-pasajero11[label = "PASAJERO 11\n TURNOS: 2\n DOCUMENTOS 7\n MALETAS: 3"];
-pasajero12[label = "PASAJERO 12\n TURNOS: 2\n DOCUMENTOS 10\n MALETAS: 2"];
-pasajero13[label = "PASAJERO 13\n TURNOS: 3\n DOCUMENTOS 3\n MALETAS: 1"];
-pasajero14[label = "PASAJERO 14\n TURNOS: 3\n DOCUMENTOS 10\n MALETAS: 3"];
-pasajero15[label = "PASAJERO 15\n TURNOS: 1\n DOCUMENTOS 10\n MALETAS: 4"];
-pasajero16[label = "PASAJERO 16\n TURNOS: 3\n DOCUMENTOS 1\n MALETAS: 1"];
-pasajero17[label = "PASAJERO 17\n TURNOS: 1\n DOCUMENTOS 8\n MALETAS: 3"];
-pasajero18[label = "PASAJERO 18\n TURNOS: 3\n DOCUMENTOS 4\n MALETAS: 1"];
-pasajero19[label = "PASAJERO 19\n TURNOS: 3\n DOCUMENTOS 7\n MALETAS: 3"];
-pasajero20[label = "PASAJERO 20\n TURNOS: 2\n DOCUMENTOS 10\n MALETAS: 1"];
-pasajero21[label = "PASAJERO 21\n TURNOS: 3\n DOCUMENTOS 4\n MALETAS: 2"];
-pasajero22[label = "PASAJERO 22\n TURNOS: 3\n DOCUMENTOS 3\n MALETAS: 1"];
-pasajero23[label = "PASAJERO 23\n TURNOS: 1\n DOCUMENTOS 7\n MALETAS: 3"];
-pasajero24[label = "PASAJERO 24\n TURNOS: 2\n DOCUMENTOS 7\n MALETAS: 3"];
-pasajero25[label = "PASAJERO 25\n TURNOS: 3\n DOCUMENTOS 9\n MALETAS: 2"];
-pasajero26[label = "PASAJERO 26\n TURNOS: 1\n DOCUMENTOS 6\n MALETAS: 2"];
-pasajero27[label = "PASAJERO 27\n TURNOS: 2\n DOCUMENTOS 1\n MALETAS: 1"];
-pasajero28[label = "PASAJERO 28\n TURNOS: 3\n DOCUMENTOS 6\n MALETAS: 3"];
-pasajero29[label = "PASAJERO 29\n TURNOS: 2\n DOCUMENTOS 9\n MALETAS: 3"];
-pasajero30[label = "PASAJERO 30\n TURNOS: 3\n DOCUMENTOS 9\n MALETAS: 4"];
-pasajero31[label = "PASAJERO 31\n TURNOS: 1\n DOCUMENTOS 6\n MALETAS: 1"];
-pasajero32[label = "PASAJERO 32\n TURNOS: 3\n DOCUMENTOS 9\n MALETAS: 1"];
-pasajero33[label = "PASAJERO 33\n TURNOS: 3\n DOCUMENTOS 4\n MALETAS: 3"];
-pasajero34[label = "PASAJERO 34\n TURNOS: 1\n DOCUMENTOS 1\n MALETAS: 2"];
-pasajero35[label = "PASAJERO 35\n TURNOS: 2\n DOCUMENTOS 5\n MALETAS: 3"];
-pasajero36[label = "PASAJERO 36\n TURNOS: 2\n DOCUMENTOS 10\n MALETAS: 3"];
-pasajero0->pasajero1
+label = " ESTACIONES "
+estacion0[label = "AVION 8\n TURNOS: 2\n ESTADO ocupado"];
+estacion1[label = "AVION 9\n TURNOS: 3\n ESTADO ocupado"];
+estacion0->estacion1
 
-pasajero1->pasajero2
-
-pasajero2->pasajero3
-
-pasajero3->pasajero4
-
-pasajero4->pasajero5
-
-pasajero5->pasajero6
-
-pasajero6->pasajero7
-
-pasajero7->pasajero8
-
-pasajero8->pasajero9
-
-pasajero9->pasajero10
-
-pasajero10->pasajero11
-
-pasajero11->pasajero12
-
-pasajero12->pasajero13
-
-pasajero13->pasajero14
-
-pasajero14->pasajero15
-
-pasajero15->pasajero16
-
-pasajero16->pasajero17
-
-pasajero17->pasajero18
-
-pasajero18->pasajero19
-
-pasajero19->pasajero20
-
-pasajero20->pasajero21
-
-pasajero21->pasajero22
-
-pasajero22->pasajero23
-
-pasajero23->pasajero24
-
-pasajero24->pasajero25
-
-pasajero25->pasajero26
-
-pasajero26->pasajero27
-
-pasajero27->pasajero28
-
-pasajero28->pasajero29
-
-pasajero29->pasajero30
-
-pasajero30->pasajero31
-
-pasajero31->pasajero32
-
-pasajero32->pasajero33
-
-pasajero33->pasajero34
-
-pasajero34->pasajero35
-
-pasajero35->pasajero36
-
+}
+subgraph clusterCOLA{
+rankdir = LR; 
+node[shape = record];
+label = " COLA "
+COLA0[label = "AVION 10\n TURNOS: 1"];
 }
 }
 }

@@ -70,11 +70,12 @@ void restarestaciones(estacionlista*listaestacion, estacioncola*colaestacion);
 void eliminarestacioncola(estacioncola*colaestacion);
 void crearlista();
 void insertar(lista*ListaDoble);
-void eliminar(lista*ListaDoble, estacioncola*colaestacion);
+void eliminar(lista*listadoble,estacioncola*colaestacion);
 QString mostrar(lista*ListaDoble);
 void restar(lista*listadoble, estacioncola*colaestacion);
 QString graficarpasjeros();
-
+QString graficarestaciones(estacionlista*listaestaciones);
+QString graficarcolaestaciones(estacioncola*colaestacion);
 class nodoavion
 {
 public:

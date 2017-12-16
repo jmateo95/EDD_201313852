@@ -62,18 +62,11 @@ void insertar(lista*ListaDoble)
     (*num1)++;
 }
 void eliminar(lista*listadoble,estacioncola*colaestacion){
-    if(listadoble->primero==NULL)
-      {
-          std::printf("La lista esta vacia \n");
-      }else
-      {
+
           nodo*aux=listadoble->primero;
           insertarestacioncola(colaestacion,aux);
-
           listadoble->primero=aux->siguiente;
           free(aux);
-      }
-
   }
 QString mostrar(lista*listadoble){
     QString texto="";
@@ -148,9 +141,77 @@ QString graficarpasjeros(){
     viendo=viendo+"}\n";
     return viendo;
 }
+QString graficarestaciones(estacionlista*listaestaciones){
+        QString viendo="";
+        viendo=viendo+"subgraph clusterESTACIONES{\n";
+        viendo=viendo+"rankdir = LR; \n";
+        viendo=viendo+"node[shape = record];\n";
+        viendo=viendo+"label = \" ESTACIONES \"\n";
+        if(listaestaciones->primero!=NULL){
+            mantenimiento1* esc=listaestaciones->primero;
+            int i=0;
+            while(esc!=NULL){
+                QString estado1="";
+                if(esc->estado==0){
+                    estado1="vacio";
+                }else{
+                    estado1="ocupado";
+                }
+            viendo=viendo+"estacion"+QString::number(i)+"[label = \"AVION "+QString::number(esc->numero)+ "\\n TURNOS: "+QString::number(esc->mantenimiento)+"\\n ESTADO "+estado1+"\"];";
+            viendo=viendo+"\n";
+            esc = esc->siguiente;
+            i++;
+            }
+            i=0;
+            esc=listaestaciones->primero;
+            while(esc->siguiente!=NULL)
+            {
+            viendo=viendo+"estacion"+QString::number(i)+"->"+"estacion"+QString::number(i+1);
+            viendo=viendo+"\n";
+            viendo=viendo+"\n";
+            esc = esc->siguiente;
+            i++;
+            }
+
+        }
+        viendo=viendo+"}\n";
+        return viendo;
+}
+QString graficarcolaestaciones(estacioncola*colaestacion){
+        QString viendo="";
+        viendo=viendo+"subgraph clusterCOLA{\n";
+        viendo=viendo+"rankdir = LR; \n";
+        viendo=viendo+"node[shape = record];\n";
+        viendo=viendo+"label = \" COLA \"\n";
+        if(colaestacion->primero!=NULL){
+            cola* esc=colaestacion->primero;
+            int i=0;
+            while(esc!=NULL){
+                QString estado1="";
+            viendo=viendo+"COLA"+QString::number(i)+"[label = \"AVION "+QString::number(esc->numero)+ "\\n TURNOS: "+QString::number(esc->mantenimiento)+"\"];";
+            viendo=viendo+"\n";
+            esc = esc->siguiente;
+            i++;
+            }
+            i=0;
+            esc=colaestacion->primero;
+            while(esc->siguiente!=NULL)
+            {
+            viendo=viendo+"COLA"+QString::number(i)+"->"+"COLA"+QString::number(i+1);
+            viendo=viendo+"\n";
+            viendo=viendo+"\n";
+            esc = esc->siguiente;
+            i++;
+            }
+
+        }
+        viendo=viendo+"}\n";
+        return viendo;
+}
 void insertarestacioncola(estacioncola*colaestacion, nodo *av){
     cola *nuevo=(cola*)malloc(sizeof(cola));
     nuevo->siguiente=NULL;
+
     if(colaestacion->primero==NULL)
     {
         colaestacion->primero=nuevo;
@@ -195,40 +256,45 @@ void comprobarestaciones(estacionlista*listaestacion, estacioncola*colaestacion)
  mantenimiento1 *aux=(mantenimiento1*)malloc(sizeof(mantenimiento1));
  cola *aux1=(cola*)malloc(sizeof(cola));
  aux=listaestacion->primero;
- aux1=colaestacion->primero;
     while(aux!=NULL){
         if (aux->estado==0){
-            aux->estado=1;
 
+            aux->estado=1;
             aux->mantenimiento=colaestacion->primero->mantenimiento;
             aux->numero=colaestacion->primero->numero;
             aux->tipo=colaestacion->primero->tipo;
-            aux=aux->siguiente;
+
             eliminarestacioncola(colaestacion);
             break;
         }
+        aux=aux->siguiente;
     }
 }
 }
 void restarestaciones(estacionlista*listaestacion, estacioncola*colaestacion)
 {
-    int *n=&t1;
     mantenimiento1 *aux=listaestacion->primero;
-    while(aux!=NULL){
-        if(aux->estado=1){
+
+    while(aux!=NULL)
+    {
+    if(aux->estado==1){
         int turnos=aux->mantenimiento;
         if(turnos==1){
             aux->estado=0;
             aux->mantenimiento=0;
             aux->numero=0;
             aux->tipo=0;
-            comprobarestaciones(listaestacion, colaestacion);
-        }else{
-            aux->mantenimiento=turnos-1;
+        }else if(turnos>1){
+            aux->mantenimiento=(turnos-1);
         }
+
     }
     aux=aux->siguiente;
-  }
+    }
+
+   if(colaestacion->primero!=NULL){
+    comprobarestaciones(listaestacion, colaestacion);
+   }
 }
 void eliminarestacioncola(estacioncola*colaestacion){
     if(colaestacion->primero==NULL)

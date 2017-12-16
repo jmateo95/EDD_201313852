@@ -12,5 +12,5 @@ class grapviz
 public:
     grapviz();
 };
-void graficar(lista*listadoble);
+void graficar(lista*listadoble, estacionlista*listaestacion, estacioncola *colaestacion);
 #endif // GRAPVIZ_H

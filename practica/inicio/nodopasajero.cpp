@@ -53,7 +53,7 @@ avion2->avion0
 avion0->avion2
 }
 */
-QString     graficarmaletas1(){
+QString graficarmaletas1(){
 int numero= mostrarmaletas();
 QString viendo="";
 viendo=viendo+"subgraph clusterMALETAS{\n";
@@ -81,7 +81,6 @@ if(numero!=0){
 viendo=viendo+"}\n";
 return viendo;
 }
-
 QString mostrarper(listaper*listadoble){
     QString texto="";
     if(listadoble->primero==NULL){

@@ -47,17 +47,19 @@ void MainWindow::on_pushButton_clicked()
     crearlista();
     crearlistamaletas();
     crearlistaescri(es);
-    for(int i=0;i<es;i++){
+    for(int i=0;i<man;i++){
         insertarestacion(listaestacion, i);
     }
 }
 
 void MainWindow::on_pushButton_2_clicked()
 {
+   if(tu>0){
     if(ListaDoblemente->primero!=NULL &&tu!=0)
     {
 
         restar(ListaDoblemente, colaestacion);
+        restarestaciones(listaestacion, colaestacion);
     }
     if(av!=0){
     insertar(ListaDoblemente);
@@ -65,18 +67,17 @@ void MainWindow::on_pushButton_2_clicked()
     for(int i=0;i<es;i++){
 
     }
-
-
     QString hola=mostrar(ListaDoblemente);
     ui->textEdit->setText(hola);
-    graficar(ListaDoblemente);
+    graficar(ListaDoblemente, listaestacion,colaestacion);
     QString imagefilename = ("C:\\Users\\joubm\\Documents\\QT\\practica\\build-inicio-Desktop_Qt_5_9_3_MinGW_32bit-Debug\\imagen.jpg");
     QImage QImagen;
     QImagen.load ( imagefilename);
     ui->label_3->setPixmap(QPixmap::fromImage(QImagen));
-    ui->textEdit_2->setText(graficarpasjeros());
-    (*av1)=(*av1)-1;
-    (*tu1)=(*tu1)-1;
+    ui->textEdit_2->setText(graficarcolaestaciones(colaestacion));
 
+}
+   (*av1)=(*av1)-1;
+   (*tu1)=(*tu1)-1;
 }
 /*ui->label_3->setText(QString::number(tipo2));*/
