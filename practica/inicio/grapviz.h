@@ -3,6 +3,8 @@
 #include<mainwindow.h>
 #include<nodoavion.h>
 #include<maletas.h>
+#include<nodopasajero.h>
+#include<escritorios.h>
 
 
 class grapviz

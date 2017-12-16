@@ -2,15 +2,19 @@
 #include "mainwindow.h"
 #include "nodoavion.h"
 #include "maletas.h"
+#include "nodopasajero.h"
+#include "escritorios.h"
 
 void graficar(lista*listadoble)
 {
-    FILE *dot;
+
+       FILE *dot;
        dot = fopen("dot.dot", "w+");
        fprintf(dot, "digraph{\n");
-       fprintf(dot,"rankdir = LR; \n ");
-       fprintf(dot,"node[shape = record];\n");
+       fprintf(dot,"rankdir = RL; \n");
        fprintf(dot, "subgraph clusterPRACTICA{\n");
+       fprintf(dot,"rankdir = BT; \n");
+       fprintf(dot,"node[shape = record];\n");
        fprintf(dot, "label = \"PRACTICA\";\n");
        fprintf(dot, "subgraph clusterAVIONES{\n");
        fprintf(dot, "label = \" AVIONES \"\n");
@@ -46,13 +50,12 @@ void graficar(lista*listadoble)
                cont++;
            }
        }
+
        fprintf(dot, "}\n");
-
-
-
-
-
-
+       QString escribir= graficarmaletas1()+graficarescritorios()+graficarpasjeros();
+       QByteArray ba = escribir.toLatin1();
+        const char *c_str2 = ba.data();
+       fprintf(dot, c_str2);
        fprintf(dot, "}\n");
        fprintf(dot, "}\n");
        fclose(dot);

@@ -1,10 +1,12 @@
 #include "nodoavion.h"
 #include "nodopasajero.h"
 #include "maletas.h"
-
+#include "escritorios.h"
 int t;
+int t1;
 int num;
 listaper *listapersona;
+
 void crearlista(){
     listapersona= (listaper*)malloc(sizeof(listaper));
     listapersona->primero=NULL;
@@ -12,62 +14,63 @@ void crearlista(){
 }
 void insertar(lista*ListaDoble)
 {
-    int *num1=&num;
-    nodo *nuevo=(nodo*)malloc(sizeof(nodo));
-    int pasajeros=0;
-    int desabordaje=0;
-    int mantenimiento=0;
-    srand (time(NULL));
-    int tipo=1+rand()%3;
-    if(tipo==1)
-    {
-       pasajeros= 5+rand()%6;
-       desabordaje=1;
-       mantenimiento=1+rand()%3;
-    }else if(tipo==2)
-    {
-        pasajeros= 15+rand()%11;
-        desabordaje=2;
-        mantenimiento=2+rand()%3;
-    }else
-    {
-        pasajeros= 30+rand()%11;
-        desabordaje=3;
-        mantenimiento=3+rand()%4;
-    }
+        int *num1=&num;
+        nodo *nuevo=(nodo*)malloc(sizeof(nodo));
+        int pasajeros=0;
+        int desabordaje=0;
+        int mantenimiento=0;
+        srand (time(NULL));
+        int tipo=1+rand()%3;
+        if(tipo==1)
+        {
+           pasajeros= 5+rand()%6;
+           desabordaje=1;
+           mantenimiento=1+rand()%3;
+        }else if(tipo==2)
+        {
+            pasajeros= 15+rand()%11;
+            desabordaje=2;
+            mantenimiento=2+rand()%3;
+        }else
+        {
+            pasajeros= 30+rand()%11;
+            desabordaje=3;
+            mantenimiento=3+rand()%4;
+        }
 
-    nuevo->siguiente=NULL;
-    if(ListaDoble->primero==NULL)
-    {
-        ListaDoble->primero=nuevo;
-        ListaDoble->ultimo=nuevo;
-        nuevo->numero=*num1;
-        nuevo->tipo=tipo;
-        nuevo->pasajeros=pasajeros;
-        nuevo->turnos=desabordaje;
-        nuevo->mantenimiento=mantenimiento;
-    }else
-    {
-        ListaDoble->ultimo->siguiente=nuevo;
-        nuevo->anterior=ListaDoble->ultimo;
-        ListaDoble->ultimo=nuevo;
-        nuevo->numero=*num1;
-        nuevo->tipo=tipo;
-        nuevo->pasajeros=pasajeros;
-        nuevo->turnos=desabordaje;
-        nuevo->mantenimiento=mantenimiento;
-    }
-(*num1)++;
+        nuevo->siguiente=NULL;
+        if(ListaDoble->primero==NULL)
+        {
+            ListaDoble->primero=nuevo;
+            ListaDoble->ultimo=nuevo;
+            nuevo->numero=*num1;
+            nuevo->tipo=tipo;
+            nuevo->pasajeros=pasajeros;
+            nuevo->turnos=desabordaje;
+            nuevo->mantenimiento=mantenimiento;
+        }else
+        {
+            ListaDoble->ultimo->siguiente=nuevo;
+            nuevo->anterior=ListaDoble->ultimo;
+            ListaDoble->ultimo=nuevo;
+            nuevo->numero=*num1;
+            nuevo->tipo=tipo;
+            nuevo->pasajeros=pasajeros;
+            nuevo->turnos=desabordaje;
+            nuevo->mantenimiento=mantenimiento;
+        }
+    (*num1)++;
 }
-
-void eliminar(lista*listadoble){
+void eliminar(lista*listadoble,estacioncola*colaestacion){
     if(listadoble->primero==NULL)
       {
           std::printf("La lista esta vacia \n");
       }else
       {
           nodo*aux=listadoble->primero;
-               listadoble->primero=aux->siguiente;
+          insertarestacioncola(colaestacion,aux);
+
+          listadoble->primero=aux->siguiente;
           free(aux);
       }
 
@@ -95,7 +98,7 @@ QString mostrar(lista*listadoble){
     return texto3;
     }
 }
-void restar(lista*listadoble){
+void restar(lista*listadoble, estacioncola*colaestacion){
 
     int *n=&t;
     nodo*aux=listadoble->primero;
@@ -110,12 +113,136 @@ void restar(lista*listadoble){
          insertarper(listapersona, (*n),maletas1, turnos1, documentos1);
          (*n)++;
       }
-        eliminar(listadoble);
+        eliminar(listadoble, colaestacion);
     }else{
         aux->turnos=turnos-1;
     }
 }
+QString graficarpasjeros(){
+    QString viendo="";
+    viendo=viendo+"subgraph clusterPASAJEROS{\n";
+    viendo=viendo+"rankdir = LR; \n";
+    viendo=viendo+"node[shape = record];\n";
+    viendo=viendo+"label = \" PASAJEROS \"\n";
+    if(listapersona->primero!=NULL){
+        nodoper* esc=listapersona->primero;
+        int i=0;
+        while(esc!=NULL){
+        viendo=viendo+"pasajero"+QString::number(i)+"[label = \"PASAJERO "+QString::number(esc->pasajero)+ "\\n TURNOS: "+QString::number(esc->turnos)+"\\n DOCUMENTOS "+QString::number(esc->documentos)+"\\n MALETAS: "+QString::number(esc->maletas)+"\"];";
+        viendo=viendo+"\n";
+        esc = esc->proximo;
+        i++;
+        }
+        i=0;
+        esc=listapersona->primero;
+        while(esc->proximo!=NULL)
+        {
+        viendo=viendo+"pasajero"+QString::number(i)+"->"+"pasajero"+QString::number(i+1);
+        viendo=viendo+"\n";
+        viendo=viendo+"\n";
+        esc = esc->proximo;
+        i++;
+        }
 
+    }
+    viendo=viendo+"}\n";
+    return viendo;
+}
+void insertarestacioncola(estacioncola*colaestacion, nodo *av){
+    cola *nuevo=(cola*)malloc(sizeof(cola));
+    nuevo->siguiente=NULL;
+    if(colaestacion->primero==NULL)
+    {
+        colaestacion->primero=nuevo;
+        colaestacion->ultimo=nuevo;
+        nuevo->numero=av->numero;
+        nuevo->mantenimiento=av->mantenimiento;
+        nuevo->tipo=av->tipo;
+    }else
+    {
+        colaestacion->ultimo->siguiente=nuevo;
+        colaestacion->ultimo=nuevo;
+        nuevo->numero=av->numero;
+        nuevo->mantenimiento=av->mantenimiento;
+        nuevo->tipo=av->tipo;
+    }
+}
+void insertarestacion(estacionlista*listaestacion, int num2){
+    mantenimiento1 *nuevo=(mantenimiento1*)malloc(sizeof(mantenimiento1));
+    nuevo->siguiente=NULL;
+    if(listaestacion->primero==NULL)
+    {
+        listaestacion->primero=nuevo;
+        listaestacion->ultimo=nuevo;
+        nuevo->numero=num2;
+        nuevo->mantenimiento=0;
+        nuevo->tipo=0;
+        nuevo->estado=0;
+    }else
+    {
+
+        listaestacion->ultimo->siguiente=nuevo;
+        listaestacion->ultimo=nuevo;
+        nuevo->numero=num2;
+        nuevo->mantenimiento=0;
+        nuevo->tipo=0;
+        nuevo->estado=0;
+    }
+}
+void comprobarestaciones(estacionlista*listaestacion, estacioncola*colaestacion)
+{
+ if(colaestacion->primero!=NULL){
+ mantenimiento1 *aux=(mantenimiento1*)malloc(sizeof(mantenimiento1));
+ cola *aux1=(cola*)malloc(sizeof(cola));
+ aux=listaestacion->primero;
+ aux1=colaestacion->primero;
+    while(aux!=NULL){
+        if (aux->estado==0){
+            aux->estado=1;
+
+            aux->mantenimiento=colaestacion->primero->mantenimiento;
+            aux->numero=colaestacion->primero->numero;
+            aux->tipo=colaestacion->primero->tipo;
+            aux=aux->siguiente;
+            eliminarestacioncola(colaestacion);
+            break;
+        }
+    }
+}
+}
+void restarestaciones(estacionlista*listaestacion, estacioncola*colaestacion)
+{
+    int *n=&t1;
+    mantenimiento1 *aux=listaestacion->primero;
+    while(aux!=NULL){
+        if(aux->estado=1){
+        int turnos=aux->mantenimiento;
+        if(turnos==1){
+            aux->estado=0;
+            aux->mantenimiento=0;
+            aux->numero=0;
+            aux->tipo=0;
+            comprobarestaciones(listaestacion, colaestacion);
+        }else{
+            aux->mantenimiento=turnos-1;
+        }
+    }
+    aux=aux->siguiente;
+  }
+}
+void eliminarestacioncola(estacioncola*colaestacion){
+    if(colaestacion->primero==NULL)
+      {
+          std::printf("La lista esta vacia \n");
+      }else
+      {
+          cola*aux=colaestacion->primero;
+
+          colaestacion->primero=aux->siguiente;
+          free(aux);
+      }
+
+  }
 nodoavion::nodoavion()
 {
 

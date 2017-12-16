@@ -4,6 +4,7 @@
 #include "grapviz.h"
 #include "nodopasajero.h"
 #include "maletas.h"
+#include "escritorios.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -18,38 +19,64 @@ MainWindow::~MainWindow()
 }
 int tu=0;
 int av=0;
-lista *ListaDoblemente;
+int *tu1=0;
+int *av1=0;
 
+int es=0;
+int man=0;
+lista *ListaDoblemente;
+estacionlista *listaestacion=(estacionlista*)malloc(sizeof(estacionlista));
+estacioncola *colaestacion=(estacioncola*)malloc(sizeof(estacioncola));
 QString h;
 void MainWindow::on_pushButton_clicked()
 {
     ListaDoblemente= (lista*)malloc(sizeof(lista));
     ListaDoblemente->primero=NULL;
     ListaDoblemente->ultimo=NULL;
+    listaestacion->primero=NULL;
+    listaestacion->ultimo=NULL;
+    colaestacion->primero=NULL;
+    colaestacion->ultimo=NULL;
     tu=ui->lineEdit->text().toInt();
-    av=ui->lineEdit->text().toInt();
+    av=ui->lineEdit_2->text().toInt();
+    es=ui->lineEdit_3->text().toInt();
+    man=ui->lineEdit_4->text().toInt();
+    av1=&av;
+    tu1=&tu;
+    ui->pushButton->setEnabled(false);
     crearlista();
     crearlistamaletas();
-
+    crearlistaescri(es);
+    for(int i=0;i<es;i++){
+        insertarestacion(listaestacion, i);
+    }
 }
 
 void MainWindow::on_pushButton_2_clicked()
 {
-    if(ListaDoblemente->primero!=NULL)
+    if(ListaDoblemente->primero!=NULL &&tu!=0)
     {
-        restar(ListaDoblemente);
+
+        restar(ListaDoblemente, colaestacion);
+    }
+    if(av!=0){
+    insertar(ListaDoblemente);
+    }
+    for(int i=0;i<es;i++){
+
     }
 
-    insertar(ListaDoblemente);
-    QString hola=mostrar(ListaDoblemente);
 
+    QString hola=mostrar(ListaDoblemente);
     ui->textEdit->setText(hola);
     graficar(ListaDoblemente);
     QString imagefilename = ("C:\\Users\\joubm\\Documents\\QT\\practica\\build-inicio-Desktop_Qt_5_9_3_MinGW_32bit-Debug\\imagen.jpg");
     QImage QImagen;
     QImagen.load ( imagefilename);
     ui->label_3->setPixmap(QPixmap::fromImage(QImagen));
-    ui->label_6->setText(mostrarmaletas());
+    ui->textEdit_2->setText(graficarpasjeros());
+    (*av1)=(*av1)-1;
+    (*tu1)=(*tu1)-1;
 
 }
 /*ui->label_3->setText(QString::number(tipo2));*/

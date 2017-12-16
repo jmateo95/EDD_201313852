@@ -42,7 +42,9 @@ public:
     QTextEdit *textEdit;
     QLabel *label_4;
     QLabel *label_5;
+    QTextEdit *textEdit_2;
     QLabel *label_6;
+    QLabel *label_7;
     QMenuBar *menuBar;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
@@ -51,7 +53,7 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
-        MainWindow->resize(942, 602);
+        MainWindow->resize(1294, 907);
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         lineEdit = new QLineEdit(centralWidget);
@@ -80,7 +82,7 @@ public:
         pushButton_2->setGeometry(QRect(20, 60, 71, 23));
         label_3 = new QLabel(centralWidget);
         label_3->setObjectName(QStringLiteral("label_3"));
-        label_3->setGeometry(QRect(300, 80, 611, 441));
+        label_3->setGeometry(QRect(300, 80, 971, 761));
         label_3->setScaledContents(true);
         textEdit = new QTextEdit(centralWidget);
         textEdit->setObjectName(QStringLiteral("textEdit"));
@@ -91,13 +93,19 @@ public:
         label_5 = new QLabel(centralWidget);
         label_5->setObjectName(QStringLiteral("label_5"));
         label_5->setGeometry(QRect(310, 60, 47, 13));
+        textEdit_2 = new QTextEdit(centralWidget);
+        textEdit_2->setObjectName(QStringLiteral("textEdit_2"));
+        textEdit_2->setGeometry(QRect(30, 320, 251, 221));
         label_6 = new QLabel(centralWidget);
         label_6->setObjectName(QStringLiteral("label_6"));
-        label_6->setGeometry(QRect(40, 330, 47, 13));
+        label_6->setGeometry(QRect(310, 10, 71, 16));
+        label_7 = new QLabel(centralWidget);
+        label_7->setObjectName(QStringLiteral("label_7"));
+        label_7->setGeometry(QRect(200, 10, 81, 16));
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 942, 21));
+        menuBar->setGeometry(QRect(0, 0, 1294, 21));
         MainWindow->setMenuBar(menuBar);
         mainToolBar = new QToolBar(MainWindow);
         mainToolBar->setObjectName(QStringLiteral("mainToolBar"));
@@ -121,7 +129,8 @@ public:
         label_3->setText(QApplication::translate("MainWindow", "TextLabel", Q_NULLPTR));
         label_4->setText(QApplication::translate("MainWindow", "CONSOLA", Q_NULLPTR));
         label_5->setText(QApplication::translate("MainWindow", "VISOR", Q_NULLPTR));
-        label_6->setText(QApplication::translate("MainWindow", "TextLabel", Q_NULLPTR));
+        label_6->setText(QApplication::translate("MainWindow", "ESTACIONES", Q_NULLPTR));
+        label_7->setText(QApplication::translate("MainWindow", "ESCRITORIOS", Q_NULLPTR));
     } // retranslateUi
 
 };

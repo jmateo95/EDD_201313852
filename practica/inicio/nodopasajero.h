@@ -10,6 +10,7 @@
 
 typedef struct nodoper
 {
+public:
     int pasajero;
     int maletas;
     int turnos;
@@ -19,10 +20,13 @@ typedef struct nodoper
 
 typedef struct listaper
 {
+public:
     nodoper *primero;
     nodoper *ultimo;
-    struct listaper *listaper;
+    struct listaper *perlist;
 }listaper;
+
+QString graficarmaletas1();
 void crearlistamaletas();
 void insertarper(listaper*Listapersonas, int n, int maletas, int turnos, int documentos);
 void eliminarper(listaper*Listapersonas);

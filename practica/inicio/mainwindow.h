@@ -7,6 +7,7 @@
 #include<maletas.h>
 #include <iostream>
 #include <string>
+#include<escritorios.h>
 namespace Ui {
 class MainWindow;
 }

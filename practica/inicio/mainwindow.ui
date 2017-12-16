@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>942</width>
-    <height>602</height>
+    <width>1294</width>
+    <height>907</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -111,8 +111,8 @@
      <rect>
       <x>300</x>
       <y>80</y>
-      <width>611</width>
-      <height>441</height>
+      <width>971</width>
+      <height>761</height>
      </rect>
     </property>
     <property name="text">
@@ -158,17 +158,40 @@
      <string>VISOR</string>
     </property>
    </widget>
+   <widget class="QTextEdit" name="textEdit_2">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>320</y>
+      <width>251</width>
+      <height>221</height>
+     </rect>
+    </property>
+   </widget>
    <widget class="QLabel" name="label_6">
     <property name="geometry">
      <rect>
-      <x>40</x>
-      <y>330</y>
-      <width>47</width>
-      <height>13</height>
+      <x>310</x>
+      <y>10</y>
+      <width>71</width>
+      <height>16</height>
      </rect>
     </property>
     <property name="text">
-     <string>TextLabel</string>
+     <string>ESTACIONES</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_7">
+    <property name="geometry">
+     <rect>
+      <x>200</x>
+      <y>10</y>
+      <width>81</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>ESCRITORIOS</string>
     </property>
    </widget>
   </widget>
@@ -177,7 +200,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>942</width>
+     <width>1294</width>
      <height>21</height>
     </rect>
    </property>

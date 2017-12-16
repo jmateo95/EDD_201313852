@@ -7,18 +7,20 @@
 #include <maletas.h>
 typedef struct maletapa
 {
+public:
     int numero;
     struct maletapa *siguiente;
     struct maletapa *anterior;
 }maletapa;
 typedef struct listama
 {
+public:
     maletapa *primero;
     maletapa *ultimo;
     struct listama *listaDoble;
 }listama;
 void insertarmaletas(listama*ListaDoble);
-QString mostrarmaletas();
+int mostrarmaletas();
 class maletas
 {
 public:

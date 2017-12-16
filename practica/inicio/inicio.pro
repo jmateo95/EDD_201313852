@@ -29,14 +29,16 @@ SOURCES += \
     nodoavion.cpp \
     grapviz.cpp \
     nodopasajero.cpp \
-    maletas.cpp
+    maletas.cpp \
+    escritorios.cpp
 
 HEADERS += \
         mainwindow.h \
     nodoavion.h \
     grapviz.h \
     nodopasajero.h \
-    maletas.h
+    maletas.h \
+    escritorios.h
 
 FORMS += \
         mainwindow.ui

@@ -2,8 +2,8 @@
 #include "maletas.h"
 int numm;
 
-QString mostrarmaletas(){
-    return (QString::number(numm));
+int mostrarmaletas(){
+    return ((numm));
 }
 void insertarmaletas(listama*ListaDoble)
 {
