@@ -1,0 +1,9 @@
+c:\users\joubm\documents\visual studio 2013\Projects\TAREA3\TAREA3\bin\Debug\TAREA3.exe.config
+c:\users\joubm\documents\visual studio 2013\Projects\TAREA3\TAREA3\bin\Debug\TAREA3.exe
+c:\users\joubm\documents\visual studio 2013\Projects\TAREA3\TAREA3\bin\Debug\TAREA3.pdb
+c:\users\joubm\documents\visual studio 2013\Projects\TAREA3\TAREA3\obj\Debug\TAREA3.csprojResolveAssemblyReference.cache
+c:\users\joubm\documents\visual studio 2013\Projects\TAREA3\TAREA3\obj\Debug\TAREA3.Form1.resources
+c:\users\joubm\documents\visual studio 2013\Projects\TAREA3\TAREA3\obj\Debug\TAREA3.Properties.Resources.resources
+c:\users\joubm\documents\visual studio 2013\Projects\TAREA3\TAREA3\obj\Debug\TAREA3.csproj.GenerateResource.Cache
+c:\users\joubm\documents\visual studio 2013\Projects\TAREA3\TAREA3\obj\Debug\TAREA3.exe
+c:\users\joubm\documents\visual studio 2013\Projects\TAREA3\TAREA3\obj\Debug\TAREA3.pdb
