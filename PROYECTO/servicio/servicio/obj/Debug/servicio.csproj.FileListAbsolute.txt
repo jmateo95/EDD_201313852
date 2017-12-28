@@ -1,0 +1,6 @@
+c:\users\joubm\documents\visual studio 2013\Projects\servicio\servicio\bin\servicio.dll.config
+c:\users\joubm\documents\visual studio 2013\Projects\servicio\servicio\bin\servicio.dll
+c:\users\joubm\documents\visual studio 2013\Projects\servicio\servicio\bin\servicio.pdb
+c:\users\joubm\documents\visual studio 2013\Projects\servicio\servicio\obj\Debug\servicio.csprojResolveAssemblyReference.cache
+c:\users\joubm\documents\visual studio 2013\Projects\servicio\servicio\obj\Debug\servicio.dll
+c:\users\joubm\documents\visual studio 2013\Projects\servicio\servicio\obj\Debug\servicio.pdb
